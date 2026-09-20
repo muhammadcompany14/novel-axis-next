@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Meridian Threads — abstract e-commerce visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#131019"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#24c6ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <g stroke="url(#acc)" stroke-width="1.5" opacity="0.35">
+    <path d="M0 780 Q400 700 800 780 T1600 780"/>
+    <path d="M0 820 Q400 740 800 820 T1600 820"/>
+    <path d="M0 860 Q400 780 800 860 T1600 860"/>
+  </g>
+  <circle cx="1150" cy="330" r="160" fill="none" stroke="url(#acc)" stroke-width="1" opacity="0.5" stroke-dasharray="4 10"/>
+  <circle cx="1150" cy="330" r="90" fill="none" stroke="url(#acc)" stroke-width="1.5" opacity="0.8"/>
+  <text x="1150" y="336" text-anchor="middle" fill="#f5f5f5" font-family="Inter, sans-serif" font-size="22" font-weight="700" opacity="0.9">MT</text>
+  <rect x="120" y="640" width="240" height="8" rx="4" fill="url(#acc)" opacity="0.9"/>
+  <rect x="120" y="662" width="140" height="8" rx="4" fill="#f5f5f5" opacity="0.25"/>
+</svg>

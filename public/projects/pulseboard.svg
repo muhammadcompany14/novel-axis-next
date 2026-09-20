@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Pulseboard — analytics dashboard visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#0a1418"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#24c6ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.3" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#24c6ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#24c6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <g stroke="#f5f5f5" stroke-opacity="0.07">
+    <line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+    <line x1="300" y1="0" x2="300" y2="1000"/>
+    <line x1="700" y1="0" x2="700" y2="1000"/>
+    <line x1="1100" y1="0" x2="1100" y2="1000"/>
+  </g>
+  <polyline points="0,760 180,700 320,740 480,620 640,660 800,540 960,580 1120,460 1280,520 1440,380 1600,420" fill="none" stroke="url(#acc)" stroke-width="3" opacity="0.9"/>
+  <g fill="#24c6ff">
+    <circle cx="480" cy="620" r="7"/>
+    <circle cx="800" cy="540" r="7"/>
+    <circle cx="1120" cy="460" r="7"/>
+    <circle cx="1440" cy="380" r="7"/>
+  </g>
+  <rect x="120" y="150" width="180" height="12" rx="6" fill="#f5f5f5" opacity="0.3"/>
+  <rect x="120" y="180" width="320" height="12" rx="6" fill="url(#acc)" opacity="0.9"/>
+</svg>

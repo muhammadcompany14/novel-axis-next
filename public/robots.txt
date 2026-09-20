@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novelaxis.com/sitemap.xml
