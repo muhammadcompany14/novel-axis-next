@@ -1,6 +1,22 @@
 # AGENTS.md
 
-Agency marketing site + admin CMS for **Novel Axis Solutions**. Next.js 16 App Router, React 19, TypeScript (strict), Tailwind CSS v4. Not a monorepo, no git repo (`/home/muhammad/CODE/agency/novel-axis-next` has no `.git`), deployed to Vercel (`npm run dev` + `vercel`).
+Agency marketing site + admin CMS for **Novel Axis Solutions**. Next.js 16 App Router, React 19, TypeScript (strict), Tailwind CSS v4. Git repo on **GitHub 1** (`MuhammadAhmadCode/novel-axis-next`, branch `main`), deployed to Vercel CLI directly.
+
+## Account routing (READ BEFORE PUSHING / DEPLOYING)
+
+Vercel enforces a **1:1 rule**: one GitHub account ↔ one Vercel account. A commit's author email must be verified against the target Vercel account's git **Login Connection**, or deploys get `BLOCKED` (`TEAM_ACCESS_REQUIRED`).
+
+| Side | GitHub account | Git commit author email | Vercel account |
+|---|---|---|---|
+| Personal / portfolio | GitHub 1 = `MuhammadAhmadCode` | `ma2565983@gmail.com` (gmail 1) | Vercel 1 (first) — connect GitHub 1 here |
+| Client projects | GitHub 2 = `muhammadcompany14` | `muhammad.company14@gmail.com` (gmail 2) | Vercel 2 = `muhammadcompany14-2238` / team `muhamamd1` — CLI currently auth'd here, GitHub 2 connected |
+
+Rules:
+- Commit author email in a repo MUST match the GitHub account that owns that repo.
+- **novel-axis-next is dual-remote**: primary on GitHub 1 (`MuhammadAhmadCode/novel-axis-next`), mirrored to GitHub 2 (`muhammadcompany14/novel-axis-next`) which connects to the Vercel 2 project. Commit authors are the GitHub 1 identity → Vercel 2's Hobby author check may still block git-based deploys; current verified path = git-less copy (`/tmp/opencode/nas-deploy`). Author fix pending if auto-deploy is wanted.
+- This machine's Vercel CLI token = **Vercel 2**. For Vercel 1, use `vercel login`/`--token`/separate `--global-config`.
+- Never connect GitHub 1 ↔ Vercel 2 or GitHub 2 ↔ Vercel 1 (silently breaks the other).
+- Do NOT delete/rename/modify any repo without explicit user approval.
 
 ## Commands
 
