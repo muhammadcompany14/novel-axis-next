@@ -13,7 +13,7 @@ Vercel enforces a **1:1 rule**: one GitHub account ↔ one Vercel account. A com
 
 Rules:
 - Commit author email in a repo MUST match the GitHub account that owns that repo.
-- **novel-axis-next is dual-remote**: primary on GitHub 1 (`MuhammadAhmadCode/novel-axis-next`), mirrored to GitHub 2 (`muhammadcompany14/novel-axis-next`) which connects to the Vercel 2 project. Commit authors are the GitHub 1 identity → Vercel 2's Hobby author check may still block git-based deploys; current verified path = git-less copy (`/tmp/opencode/nas-deploy`). Author fix pending if auto-deploy is wanted.
+- **novel-axis-next is dual-remote**: primary on GitHub 1 (`MuhammadAhmadCode/novel-axis-next`), mirrored to GitHub 2 (`muhammadcompany14/novel-axis-next`) which connects to the Vercel 2 project. Verified: `git push github2 main` auto-deploys to production on Vercel 2 (author check passes). For Vercel 1/other targets, git-less copy (`/tmp/opencode/nas-deploy`) remains a fallback.
 - This machine's Vercel CLI token = **Vercel 2**. For Vercel 1, use `vercel login`/`--token`/separate `--global-config`.
 - Never connect GitHub 1 ↔ Vercel 2 or GitHub 2 ↔ Vercel 1 (silently breaks the other).
 - Do NOT delete/rename/modify any repo without explicit user approval.
