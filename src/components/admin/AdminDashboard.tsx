@@ -350,6 +350,7 @@ interface AdminDashboardProps {
   team: TeamMember[];
   testimonials: Testimonial[];
   settings: AdminSettings;
+  storageConfigured: boolean;
 }
 
 export default function AdminDashboard({
@@ -358,6 +359,7 @@ export default function AdminDashboard({
   team: initialTeam,
   testimonials: initialTestimonials,
   settings: initialSettings,
+  storageConfigured,
 }: AdminDashboardProps) {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("overview");
@@ -515,6 +517,20 @@ export default function AdminDashboard({
 
         <div className="adm-content">
           {error && <p className="adm-status--err">{error}</p>}
+
+          {!storageConfigured && (
+            <div style={{ padding: "12px 16px", marginBottom: 16, background: "#3d2e1a", border: "1px solid #c8956c", borderRadius: 8, color: "#e8c17a", fontSize: 13 }}>
+              <strong>Storage not configured.</strong> Content edits will not persist in production. Set up{" "}
+              <a href="https://vercel.com/dashboard/stores" target="_blank" rel="noopener noreferrer" style={{ color: "#c8956c", textDecoration: "underline" }}>
+                Vercel KV
+              </a>{" "}
+              and{" "}
+              <a href="https://vercel.com/dashboard/stores?type=blob" target="_blank" rel="noopener noreferrer" style={{ color: "#c8956c", textDecoration: "underline" }}>
+                Blob storage
+              </a>{" "}
+              in the Vercel dashboard, then reconnect the environment variables.
+            </div>
+          )}
 
           {tab === "overview" && (
             <div className="adm-ov">

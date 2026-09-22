@@ -14,6 +14,7 @@ export default async function AdminPage() {
     getTeam(),
     getTestimonials(),
   ]);
+  const storageConfigured = Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
   return (
     <AdminDashboard
       projects={projects}
@@ -21,6 +22,7 @@ export default async function AdminPage() {
       team={team}
       testimonials={testimonials}
       settings={settings}
+      storageConfigured={storageConfigured}
     />
   );
 }
