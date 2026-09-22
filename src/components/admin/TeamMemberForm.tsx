@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import type { TeamMember } from "@/data/team";
 import type { CollectionFormProps } from "./collection";
 import ImageUploader from "./ImageUploader";
 
 const ACCENT_BASE = "#b5743f";
+const MAX_UPLOAD_BYTES = 4 * 1024 * 1024;
 
 export default function TeamMemberForm({
   initial,
@@ -21,6 +22,77 @@ export default function TeamMemberForm({
   const [photo, setPhoto] = useState(initial?.photo ?? "");
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const dropRef = useRef<HTMLDivElement>(null);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragging(false);
+  }, []);
+
+  const handleDrop = useCallback(async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragging(false);
+
+    const files = e.dataTransfer.files;
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    if (!file.type.startsWith("image/")) {
+      setError("Only image files are supported");
+      return;
+    }
+    if (file.size > MAX_UPLOAD_BYTES) {
+      setError("Image must be 4 MB or smaller");
+      return;
+    }
+
+    setUploading(true);
+    setError(null);
+
+    try {
+      const reader = new FileReader();
+      const dataUrl = await new Promise<string>((resolve, reject) => {
+        reader.onload = () => resolve(String(reader.result));
+        reader.onerror = () => reject(new Error("Could not read the file"));
+        reader.readAsDataURL(file);
+      });
+
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: dataUrl }),
+        cache: "no-store",
+      });
+
+      if (res.status === 401) {
+        window.location.href = "/admin/login";
+        return;
+      }
+
+      if (!res.ok) {
+        const body = (await res.json().catch(() => null)) as { error?: string } | null;
+        setError(body?.error ?? "Upload failed");
+        return;
+      }
+
+      const body = (await res.json()) as { url: string };
+      setPhoto(body.url);
+    } catch {
+      setError("Upload failed");
+    } finally {
+      setUploading(false);
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -136,6 +208,39 @@ export default function TeamMemberForm({
 
         <div className="adm-field">
           <span className="adm-label">Photo</span>
+          <div
+            ref={dropRef}
+            className={`adm-photo-drop ${dragging ? "adm-photo-drop--active" : ""} ${uploading ? "adm-photo-drop--uploading" : ""}`}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          >
+            {uploading ? (
+              <span className="adm-photo-drop__text">Uploading…</span>
+            ) : dragging ? (
+              <span className="adm-photo-drop__text">Drop image here</span>
+            ) : photo ? (
+              <div className="adm-photo">
+                <Image
+                  src={photo}
+                  alt=""
+                  width={96}
+                  height={96}
+                  className="adm-photo__preview"
+                />
+                <button
+                  type="button"
+                  className="adm-btn adm-btn--mini adm-btn--danger"
+                  onClick={() => setPhoto("")}
+                  aria-label="Remove photo"
+                >
+                  Remove
+                </button>
+              </div>
+            ) : (
+              <span className="adm-photo-drop__text">Drag & drop image or</span>
+            )}
+          </div>
           <div className="adm-imgs__add">
             <input
               type="text"
@@ -146,25 +251,6 @@ export default function TeamMemberForm({
             />
             <ImageUploader onUploaded={setPhoto} />
           </div>
-          {photo && (
-            <div className="adm-photo">
-              <Image
-                src={photo}
-                alt=""
-                width={96}
-                height={96}
-                className="adm-photo__preview"
-              />
-              <button
-                type="button"
-                className="adm-btn adm-btn--mini adm-btn--danger"
-                onClick={() => setPhoto("")}
-                aria-label="Remove photo"
-              >
-                Remove
-              </button>
-            </div>
-          )}
         </div>
 
         {error && <p className="adm-status--err">{error}</p>}

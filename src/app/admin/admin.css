@@ -847,6 +847,40 @@
   display: block;
 }
 
+/* ---------- Photo Drop Zone ---------- */
+
+.admin .adm-photo-drop {
+  border: 2px dashed #3a3a3a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin .adm-photo-drop--active {
+  border-color: #c8956c;
+  background: rgba(200, 149, 108, 0.1);
+}
+
+.admin .adm-photo-drop--uploading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.admin .adm-photo-drop__text {
+  color: #666;
+  font-size: 13px;
+}
+
+.admin .adm-photo-drop--active .adm-photo-drop__text {
+  color: #c8956c;
+}
+
 /* ---------- Login ---------- */
 
 .admin .adm-login {
