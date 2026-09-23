@@ -2975,6 +2975,34 @@
     max-width: 26ch;
   }
 
+  .team__tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-top: 0.75rem;
+    max-width: 22rem;
+  }
+
+  .team__tech-chip {
+    font-size: 0.625rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    white-space: nowrap;
+    transition:
+      color 0.3s var(--ease-smooth),
+      border-color 0.3s var(--ease-smooth);
+  }
+
+  .team__member:hover .team__tech-chip {
+    color: var(--accent, var(--color-accent-2));
+    border-color: color-mix(in srgb, var(--accent, var(--color-accent-1)) 45%, transparent);
+  }
+
   /* ============================================================
      Testimonials — dual-row auto-scrolling marquee
      ============================================================ */

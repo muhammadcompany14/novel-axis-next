@@ -46,15 +46,20 @@ function TeamPortrait({ member, index }: { member: TeamMember; index: number }) 
           {member.initials}
         </span>
       ) : (
-        <Image
-          src={member.photo}
-          alt={`Portrait of ${member.name}`}
-          fill
-          sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 90vw"
-          className="transition-transform duration-700 ease-out group-hover:scale-105"
-          priority={index < 3}
-          onError={() => setFailed(true)}
-        />
+        <>
+          <span className="team__initials" aria-hidden="true">
+            {member.initials}
+          </span>
+          <Image
+            src={member.photo}
+            alt={`Portrait of ${member.name}`}
+            fill
+            sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 90vw"
+            className="transition-transform duration-700 ease-out group-hover:scale-105"
+            priority={index < 3}
+            onError={() => setFailed(true)}
+          />
+        </>
       )}
       <div className="team__scrim" aria-hidden="true" />
     </motion.div>
@@ -90,12 +95,20 @@ export default function Team({ team }: { team: TeamMember[] }) {
               <p className="team__role">{member.title}</p>
               <p className="team__specialty">{member.specialty}</p>
               {member.tech.length > 0 && (
-                <p className="team__tech" aria-label={`Technologies: ${member.tech.join(", ")}`}>
-                  {member.tech.map((tech) => (
+                <p
+                  className="team__tech"
+                  aria-label={`Technologies: ${member.tech.join(", ")}`}
+                >
+                  {member.tech.slice(0, 6).map((tech) => (
                     <span className="team__tech-chip" key={tech}>
                       {tech}
                     </span>
                   ))}
+                  {member.tech.length > 6 && (
+                    <span className="team__tech-chip" aria-hidden="true">
+                      +{member.tech.length - 6}
+                    </span>
+                  )}
                 </p>
               )}
             </motion.article>
