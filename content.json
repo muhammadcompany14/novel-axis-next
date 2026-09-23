@@ -95,7 +95,7 @@
     }
   ],
   "settings": {
-    "email": "hello@novelaxis.com",
+    "email": "expoecom1@gmail.com",
     "contact": {
       "infoText": "Prefer email?",
       "socials": [
@@ -120,7 +120,8 @@
     "cta": {
       "label": "READY WHEN YOU ARE",
       "copy": "Tell us what you're building. We'll figure out how to build it."
-    }
+    },
+    "phone": "+44 7434 785417"
   },
   "services": [
     {

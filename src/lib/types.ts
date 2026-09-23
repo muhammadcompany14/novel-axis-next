@@ -10,6 +10,7 @@ import type { Testimonial } from "@/data/testimonials";
  */
 export interface AdminSettings {
   email: string;
+  phone: string;
   contact: {
     infoText: string;
     socials: string[];

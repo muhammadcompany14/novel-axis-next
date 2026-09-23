@@ -1,5 +1,6 @@
 export const site = {
-  email: "hello@novelaxis.com",
+  email: "expoecom1@gmail.com",
+  phone: "+44 7434 785417",
   nav: [
     { label: "Services", href: "#services" },
     { label: "Work", href: "#work" },

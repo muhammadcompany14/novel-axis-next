@@ -40,6 +40,7 @@ export default async function Home() {
         <CTA cta={site.cta} />
         <Contact
           email={site.email}
+          phone={site.phone}
           infoText={site.contact.infoText}
           socials={site.contact.socials}
         />

@@ -35,12 +35,14 @@ const socialAria: Record<string, string> = {
 
 type ContactProps = {
   email?: string;
+  phone?: string;
   infoText?: string;
   socials?: readonly string[];
 };
 
 export default function Contact({
   email = site.email,
+  phone = site.phone,
   infoText = site.contact.infoText,
   socials = site.contact.socials,
 }: ContactProps = {}) {
@@ -82,7 +84,7 @@ export default function Contact({
   );
 
   return (
-    <section className="contact section" id="contact" aria-label="Contact">
+    <section className="contact section section--cream" id="contact" aria-label="Contact">
       <div className="container">
         <SectionHeading eyebrow="09 — CONTACT" title="What are you building?" />
 
@@ -93,6 +95,15 @@ export default function Contact({
               <a className="contact__email" href={`mailto:${email}`} data-cursor="hover">
                 {email}
               </a>
+              {phone ? (
+                <a
+                  className="contact__phone"
+                  href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                  data-cursor="hover"
+                >
+                  {phone}
+                </a>
+              ) : null}
             </div>
 
             <p className="contact__meta">Response within two business days.</p>

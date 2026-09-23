@@ -12,6 +12,7 @@ export type SiteData = typeof seedSite;
 function defaultSettings(): AdminSettings {
   return {
     email: seedSite.email,
+    phone: seedSite.phone,
     contact: {
       infoText: seedSite.contact.infoText,
       socials: [...seedSite.contact.socials],
@@ -77,6 +78,7 @@ export async function getSite(): Promise<SiteData> {
   return {
     ...seedSite,
     email: s.email || seedSite.email,
+    phone: s.phone || seedSite.phone,
     hero: {
       ...seedSite.hero,
       label: s.hero.label || seedSite.hero.label,

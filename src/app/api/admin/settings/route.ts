@@ -35,6 +35,7 @@ export async function PUT(req: Request) {
 
   const patch: Partial<AdminSettings> = {
     email: str(body.email, current.email),
+    phone: str(body.phone, current.phone),
     contact: {
       infoText: str(contact.infoText, current.contact.infoText),
       socials: strArr(contact.socials, current.contact.socials),

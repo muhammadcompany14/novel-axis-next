@@ -98,6 +98,17 @@ export default function SettingsForm({ initial, onSaved }: SettingsFormProps) {
           />
         </div>
         <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-phone">
+            Phone
+          </label>
+          <input
+            id="sf-phone"
+            type="tel"
+            value={draft.phone}
+            onChange={(e) => update("phone", e.target.value)}
+          />
+        </div>
+        <div className="adm-field">
           <label className="adm-label" htmlFor="sf-info">
             Info text
           </label>
