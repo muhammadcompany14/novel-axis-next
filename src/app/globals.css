@@ -231,7 +231,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.15rem;
   }
 
   .section-label::before {
@@ -269,7 +269,7 @@
   .section-sub {
     max-width: 52ch;
     color: var(--color-text-secondary);
-    margin-top: 0.35rem;
+    margin-top: 0.15rem;
     font-size: var(--fs-lead);
     line-height: 1.6;
   }
@@ -2863,6 +2863,10 @@
   /* ============================================================
      Team
      ============================================================ */
+
+  .team {
+    padding-bottom: clamp(6rem, 12vw, 9rem);
+  }
 
   .team__grid {
     display: grid;
