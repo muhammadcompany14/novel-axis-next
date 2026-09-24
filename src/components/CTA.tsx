@@ -27,7 +27,7 @@ export default function CTA({ cta = site.cta }: CTAProps = {}) {
       <ParticleField
         className="cta__canvas"
         density={7}
-        colors={["200,149,108", "232,193,122", "240,232,220"]}
+        colors={["61,168,224", "201,244,33", "238,243,255"]}
         speed={[0.04, 0.14]}
         size={[0.6, 1.8]}
         parallax={16}

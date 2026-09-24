@@ -1,19 +1,20 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { site } from "@/data/site";
 
 const spotlight = {
   backgroundImage:
-    "radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(240,232,220,0.95), rgba(200,149,108,0.75) 38%, rgba(232,193,122,0.45) 62%, transparent 80%)",
+    "radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(238,243,255,0.9), rgba(201,244,33,0.55) 38%, rgba(61,168,224,0.35) 62%, transparent 80%)",
   WebkitBackgroundClip: "text",
   backgroundClip: "text",
   color: "transparent",
 } as const;
 
 const stroke = {
-  WebkitTextStroke: "1.5px rgba(240,232,220,0.10)",
+  WebkitTextStroke: "1.5px rgba(238,243,255,0.10)",
 } as const;
 
 const typeSizes =
@@ -36,6 +37,16 @@ export default function BrandStatement() {
       aria-label="NOVEL AXIS SOLUTIONS signature"
     >
       <div ref={ref} onPointerMove={onPointerMove} className="container">
+        <Reveal>
+          <Image
+            src="/novel_logo.png"
+            alt=""
+            width={48}
+            height={48}
+            aria-hidden="true"
+            className="mb-6 h-12 w-12 rounded-xl"
+          />
+        </Reveal>
         <Reveal>
           <p className="section-label">{site.brand.label}</p>
         </Reveal>

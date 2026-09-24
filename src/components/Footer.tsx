@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/data/site";
 
 type FooterProps = {
@@ -13,7 +14,12 @@ export default function Footer({ footer = site.footer, email = site.email }: Foo
         <div className="footer__brand">
           <a className="footer__logo" href="#home" aria-label="Novel Axis Solutions">
             <span className="nav__logo-mark" aria-hidden="true">
-              N
+              <Image
+                src="/novel_logo.png"
+                alt="Novel Axis Solutions"
+                width={40}
+                height={40}
+              />
             </span>
             <span className="footer__logo-text">NOVEL AXIS SOLUTIONS</span>
           </a>

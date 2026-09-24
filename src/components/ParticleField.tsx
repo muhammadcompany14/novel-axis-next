@@ -27,7 +27,7 @@ interface Particle {
 export default function ParticleField({
   className = "",
   density = 14,
-  colors = ["200,149,108", "232,193,122", "240,232,220"],
+  colors = ["61,168,224", "201,244,33", "238,243,255"],
   speed = [0.05, 0.2],
   size = [0.6, 2],
   parallax = 14,

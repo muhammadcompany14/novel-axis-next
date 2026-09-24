@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { site } from "@/data/site";
 import MobileMenu from "@/components/MobileMenu";
@@ -61,7 +62,13 @@ export default function Navbar() {
               whileHover={reduced ? undefined : { scale: 1.07 }}
               transition={{ type: "spring", stiffness: 340, damping: 16 }}
             >
-              N
+              <Image
+                src="/novel_logo.png"
+                alt="Novel Axis Solutions"
+                width={40}
+                height={40}
+                priority
+              />
             </motion.span>
             <span className="nav__logo-text">
               NOVEL AXIS

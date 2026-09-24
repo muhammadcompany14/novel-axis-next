@@ -59,7 +59,7 @@ export default function SpotlightCard({
     { stiffness: 220, damping: 26 }
   );
 
-  const spotlight = useMotionTemplate`radial-gradient(${SPOTLIGHT_SIZE}px circle at ${spotX}px ${spotY}px, rgba(200, 149, 108, 0.32), transparent 72%)`;
+  const spotlight = useMotionTemplate`radial-gradient(${SPOTLIGHT_SIZE}px circle at ${spotX}px ${spotY}px, rgba(61, 168, 224, 0.2), transparent 72%)`;
 
   const setHover = (value: boolean) => {
     setHovered(value);
