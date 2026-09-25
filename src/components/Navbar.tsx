@@ -8,6 +8,7 @@ import MobileMenu from "@/components/MobileMenu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
   const reduced = useReducedMotion();
@@ -20,7 +21,19 @@ export default function Navbar() {
   });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      if (y < 80) {
+        setHidden(false);
+      } else if (y > lastY + 4) {
+        setHidden(true);
+      } else if (y < lastY - 4) {
+        setHidden(false);
+      }
+      lastY = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -53,7 +66,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`nav${scrolled ? " is-scrolled" : ""}`}>
+      <header className={`nav${scrolled ? " is-scrolled" : ""}${hidden && !open ? " is-hidden" : ""}`}>
         <div className="container nav__inner">
           <a className="nav__logo" href="#home" aria-label="Novel Axis Solutions — home" data-cursor="hover">
             <motion.span
