@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 interface SplitTitleProps {
   text: string;
@@ -10,6 +10,16 @@ interface SplitTitleProps {
   once?: boolean;
   as?: "h1" | "h2" | "h3" | "p";
 }
+
+const shellVariants: Variants = {
+  hidden: {},
+  visible: {},
+};
+
+const wordVariants: Variants = {
+  hidden: { y: "115%", opacity: 0 },
+  visible: { y: "0%", opacity: 1 },
+};
 
 export default function SplitTitle({
   text,
@@ -43,9 +53,7 @@ export default function SplitTitle({
         const inner = (
           <motion.span
             className="word"
-            initial={{ y: "115%", opacity: 0 }}
-            whileInView={{ y: "0%", opacity: 1 }}
-            viewport={{ once, margin: "0px 0px -8% 0px" }}
+            variants={wordVariants}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: delay + i * 0.06 }}
           >
             {w}
@@ -53,12 +61,16 @@ export default function SplitTitle({
           </motion.span>
         );
         return (
-          <span
+          <motion.span
             key={i}
             style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top" }}
+            variants={shellVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once, margin: "0px 0px -8% 0px" }}
           >
             {isEm ? <em>{inner}</em> : inner}
-          </span>
+          </motion.span>
         );
       })}
     </Tag>
