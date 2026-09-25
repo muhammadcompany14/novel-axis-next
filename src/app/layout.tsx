@@ -23,7 +23,7 @@ const instrument = Instrument_Serif({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#060d1c",
+  themeColor: "#020a1a",
 };
 
 export const metadata: Metadata = {
