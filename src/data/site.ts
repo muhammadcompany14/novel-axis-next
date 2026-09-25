@@ -16,58 +16,58 @@ export const site = {
   ],
   capability: ["SHOPIFY", "WEB", "APPS", "UI/UX", "DIGITAL PRODUCTS"],
   hero: {
-    label: "NOVEL AXIS SOLUTIONS — DIGITAL ENGINEERING STUDIO",
-    title: ["Digital experiences", "engineered", "beyond ordinary."],
+    label: "NOVEL AXIS SOLUTIONS · DIGITAL PRODUCT STUDIO",
+    title: ["Websites that earn trust", "products that scale", "with your business."],
     accentLine: 2,
-    copy: "We design and engineer high-performance digital experiences — from Shopify ecosystems and modern websites to custom applications and interactive products.",
+    copy: "We design and build websites, Shopify stores, and custom products for growing businesses that need clear thinking, fast performance, and less ongoing friction.",
   },
   intro: {
-    lines: ["We don't just build websites.", "We engineer digital experiences."],
+    lines: ["We start with the business.", "We finish with a product that works."],
     support: [
-      "Novel Axis Solutions combines design, engineering, interaction, and technology to create digital products that are built to perform. Small team. Serious capability. Direct collaboration.",
-      "Every project is treated as a system — architecture, interface, motion, performance — designed to work together.",
+      "Novel Axis Solutions is a small digital studio for growing businesses. Strategy, design, and engineering stay in one room, so decisions happen faster and the finished product feels considered.",
+      "We connect the customer journey, interface, content, and technology so each part supports the next. The result is easier to use, easier to maintain, and ready to grow.",
     ],
   },
   why: [
     {
       index: "01",
-      title: "Design + Engineering",
-      desc: "Design and development work together from the first sketch — not as two departments passing files.",
+      title: "One team, one brief",
+      desc: "Design and engineering work from the same priorities, so the original intent survives every decision.",
     },
     {
       index: "02",
-      title: "Technical Depth",
-      desc: "Shopify, frontend, backend, applications, UI systems — we operate across the full stack.",
+      title: "The right technical depth",
+      desc: "We handle storefronts, interfaces, applications, and the systems that connect them.",
     },
     {
       index: "03",
-      title: "Problem First",
-      desc: "Technology is selected based on the problem, not a preference. The right tool for the job, every time.",
+      title: "Decisions tied to outcomes",
+      desc: "We choose technology for the business problem, not because it is fashionable or familiar.",
     },
     {
       index: "04",
-      title: "Attention to Detail",
-      desc: "Every interaction matters — spacing, easing, states, edge cases. The details are the product.",
+      title: "Details that remove friction",
+      desc: "We test the states, transitions, and edge cases that shape how a product feels in use.",
     },
     {
       index: "05",
-      title: "Built to Evolve",
-      desc: "Products should be able to grow. Architecture that welcomes new features instead of fighting them.",
+      title: "Ready for the next release",
+      desc: "We leave you with a clear foundation, useful documentation, and a product that can keep changing.",
     },
   ],
   cta: {
     label: "READY WHEN YOU ARE",
-    title: ["Have something", "ambitious in mind?"],
-    copy: "Tell us what you're building. We'll figure out how to build it.",
+    title: ["Have a business", "challenge to solve?"],
+    copy: "Tell us the goal and the obstacle. We'll help you work out the right next step.",
   },
   brand: {
     label: "10 — THE SIGNATURE",
     lines: ["NOVEL AXIS", "SOLUTIONS"],
-    tagline: "Digital experiences engineered beyond ordinary.",
+    tagline: "Websites, stores, and products built for what comes next.",
     hint: "PAINT THE SIGNATURE WITH LIGHT",
   },
   contact: {
-    infoText: "Prefer email?",
+    infoText: "Email is the quickest way to reach us.",
     socials: ["GitHub", "LinkedIn", "X", "Dribbble"],
     services: [
       "Shopify",
@@ -90,10 +90,10 @@ export const site = {
     timelines: ["ASAP", "1 – 2 months", "2 – 3 months", "3 – 6 months", "Flexible"],
   },
   footer: {
-    tagline: "Digital experiences engineered beyond ordinary.",
+    tagline: "Websites, stores, and products for the next stage of business.",
     columns: [
       {
-        title: "Navigate",
+        title: "Explore",
         links: [
           { label: "Services", href: "#services" },
           { label: "Work", href: "#work" },
@@ -111,7 +111,7 @@ export const site = {
         ],
       },
     ],
-    contactTitle: "Contact",
+    contactTitle: "Start a conversation",
     socials: ["GitHub", "LinkedIn"],
     copyright: `© ${new Date().getFullYear()} Novel Axis Solutions. All rights reserved.`,
   },
