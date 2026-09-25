@@ -73,9 +73,9 @@ export default function Team({ team }: { team: TeamMember[] }) {
     <section className="team section" id="team" aria-label="Team">
       <div className="container">
         <SectionHeading
-          eyebrow="07 — THE TEAM"
-          title="The people behind the build."
-          sub="Five or six people. No account managers between you and the work."
+          eyebrow="07 · THE PEOPLE ON YOUR PROJECT"
+          title="Direct access to the people building it."
+          sub="One small, senior team from the first conversation through launch."
         />
         <div className="team__grid">
           {team.map((member, i) => (

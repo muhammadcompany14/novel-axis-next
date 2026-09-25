@@ -55,7 +55,11 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
       aria-label="Testimonials"
     >
       <div className="container">
-        <SectionHeading eyebrow="08 — WHAT CLIENTS SAY" title="Proof, not promises." />
+          <SectionHeading
+            eyebrow="08 · CLIENT EXPERIENCES"
+            title="What clients notice in use."
+            sub="Feedback from the teams who put the finished product to work."
+          />
 
         <div className="testimonials__marquee">
           {renderRow(firstHalf, false)}

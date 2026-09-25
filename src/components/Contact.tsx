@@ -86,7 +86,7 @@ export default function Contact({
   return (
     <section className="contact section section--cream" id="contact" aria-label="Contact">
       <div className="container">
-        <SectionHeading eyebrow="09 — CONTACT" title="What are you building?" />
+        <SectionHeading eyebrow="09 — CONTACT" title="Tell us what you're building." />
 
         <div className="contact__layout">
           <div className="contact__info">
@@ -106,7 +106,9 @@ export default function Contact({
               ) : null}
             </div>
 
-            <p className="contact__meta">Response within two business days.</p>
+            <p className="contact__meta">
+              You&apos;ll hear back within two working days.
+            </p>
 
             <ul className="contact__socials">
               {socials.map((social, i) => (

@@ -349,9 +349,9 @@ export default function Technology() {
     >
       <div className="container">
         <SectionHeading
-          eyebrow="04 — ECOSYSTEM"
-          title="Built with the modern web."
-          sub="An engineering team fluent across the stack — storefronts, interfaces, backends, and everything between."
+          eyebrow="04 · ECOSYSTEM"
+          title="The technology behind the experience."
+          sub="We choose tools that fit the job, then connect storefronts, interfaces, and systems so the whole product works as one."
         />
       </div>
 
