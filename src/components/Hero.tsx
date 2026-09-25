@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { site } from "@/data/site";
-import ParticleField from "@/components/ParticleField";
 import Reveal from "@/components/Reveal";
 import { usePrefersReducedMotion } from "@/hooks/useMediaQuery";
 
@@ -22,7 +21,6 @@ export default function Hero({ hero = site.hero }: HeroProps = {}) {
 
   return (
     <section className="hero" id="home">
-      <ParticleField className="hero__canvas" density={16} parallax={22} seed={7} />
       <div className="hero__grid-overlay" aria-hidden="true" />
 
       <div className="container hero__inner">

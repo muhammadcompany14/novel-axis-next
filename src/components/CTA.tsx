@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import MagneticButton from "@/components/MagneticButton";
-import ParticleField from "@/components/ParticleField";
 import Reveal from "@/components/Reveal";
 import SplitTitle from "@/components/SplitTitle";
 import { site } from "@/data/site";
@@ -23,15 +22,6 @@ export default function CTA({ cta = site.cta }: CTAProps = {}) {
         sizes="100vw"
         aria-hidden
         className="pointer-events-none absolute inset-0 z-0 object-cover opacity-30"
-      />
-      <ParticleField
-        className="cta__canvas"
-        density={7}
-        colors={["61,168,224", "201,244,33", "238,243,255"]}
-        speed={[0.04, 0.14]}
-        size={[0.6, 1.8]}
-        parallax={16}
-        seed={2}
       />
       <div className="cta__inner container">
         <Reveal>
