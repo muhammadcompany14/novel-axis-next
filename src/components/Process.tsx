@@ -128,7 +128,7 @@ export default function Process() {
             <div className="process__masthead">
               <SectionHeading
                 eyebrow="05 — PROCESS"
-                title="How we build."
+                title="A clear route from brief to launch."
                 titleClassName="process__masthead-title"
               >
                 <div className="process__ticker" aria-hidden="true">
@@ -203,7 +203,7 @@ export default function Process() {
 
       {/* Static list — mobile / reduced motion (no pin, no scroll-jack) */}
       <div className="container process__list-wrap">
-        <SectionHeading eyebrow="05 — PROCESS" title="How we build." />
+        <SectionHeading eyebrow="05 — PROCESS" title="A clear route from brief to launch." />
         <div className="process__list">
           {processSteps.map((s) => (
             <article key={s.num} className="process__row">

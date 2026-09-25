@@ -53,49 +53,48 @@ export default function Why({
   specialistCount: number;
 }) {
   const stats = [
-    { num: String(phaseCount).padStart(2, "0"), label: "phases — discover to launch" },
-    { num: String(techTotal).padStart(2, "0"), label: "technologies in the toolkit" },
-    { num: String(projectCount).padStart(2, "0"), label: "shipped projects" },
-    { num: "01", label: `close-knit team · ${toWords(specialistCount)} specialists` },
+    { num: String(phaseCount).padStart(2, "0"), label: "delivery phases from brief to launch" },
+    { num: String(techTotal).padStart(2, "0"), label: "tools chosen for the job" },
+    { num: String(projectCount).padStart(2, "0"), label: "projects delivered" },
+    { num: "01", label: `${toWords(specialistCount)} specialists, one working team` },
   ];
 
   return (
     <section className="section" id="about" aria-label="Why Novel Axis">
       <div className="container">
         <SectionHeading
-          eyebrow="06 — WHY NOVEL AXIS"
-          title="Small team. Serious capability."
-          sub={`A studio of ${toWords(specialistCount)}. Design, engineering, and strategy under one roof.`}
+          eyebrow="06 · WHY NOVEL AXIS"
+          title="A small team with clear ownership."
+          sub="Strategy, design, and engineering stay in one room, so clients get direct answers and a product that holds together."
         />
 
         <div className="why__manifesto">
           <div className="why__rail">
             <Reveal>
-              <p className="why__rail-label">The Manifesto</p>
-              <h3 className="why__rail-title">
-                We are small. That is the <em>point.</em>
-              </h3>
+                <p className="why__rail-label">HOW WE WORK</p>
+                <h3 className="why__rail-title">
+                  Small enough to stay <em>accountable.</em>
+                </h3>
             </Reveal>
           </div>
 
           <div className="why__body">
             <Reveal y={24}>
               <p className="why__lede">
-                The people who answer your email are the people who build your product. No account
-                managers. No hand-offs.
+                You work with the people who shape the product, not a handoff team.
               </p>
             </Reveal>
             <Reveal y={24} delay={0.08}>
               <p className="why__para">
-                {toWords(disciplineCount)} disciplines — {capabilityList}. Design and engineering
-                start from the same sketch, not two departments passing files.
+                {toWords(disciplineCount)} disciplines, {capabilityList}, handled as one brief. Design
+                and engineering start together, so the original intent survives the build.
               </p>
             </Reveal>
             <Reveal y={24} delay={0.16}>
               <p className="why__para">
-                The tool is chosen for the problem, not the preference. The details are the product
-                — spacing, easing, states, edge cases. And the architecture is built to evolve, so
-                the next feature is welcomed, not fought.
+                We choose the technology for the problem, then test the small moments that decide
+                whether a product feels easy: loading, spacing, states, and edge cases. The
+                foundation leaves room for the next release.
               </p>
             </Reveal>
           </div>
