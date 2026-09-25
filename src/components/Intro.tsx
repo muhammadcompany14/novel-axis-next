@@ -178,16 +178,16 @@ export default function Intro() {
                 onHoverChange={(h) => setHoveredCard(h ? 2 : null)}
               >
                 <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-accent-1-soft blur-2xl" />
-                <p className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-text-tertiary">
-                  THE SHAPE OF THE TEAM
+                <p className="font-sans text-[0.8125rem] font-bold uppercase tracking-[0.13em] text-text-secondary">
+                  ONE TEAM, END TO END
                 </p>
                 <p className="max-w-35 text-2xl font-extrabold leading-tight tracking-tight text-text">
-                  5–6 people.
+                  Six specialists.
                   <br />
-                  One room.
+                  One shared plan.
                   <br />
                   <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">
-                    Zero handoffs.
+                    No lost context.
                   </span>
                 </p>
                 <div className="pointer-events-none absolute bottom-5 right-6 z-10 text-xl font-black text-accent-1 transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:translate-x-1">
