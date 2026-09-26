@@ -96,6 +96,7 @@
   ],
   "settings": {
     "email": "expoecom1@gmail.com",
+    "phone": "+44 7434 785417",
     "contact": {
       "infoText": "Prefer email?",
       "socials": [
@@ -117,11 +118,41 @@
       "label": "NOVEL AXIS SOLUTIONS — DIGITAL ENGINEERING STUDIO",
       "copy": "We design and engineer high-performance digital experiences — from Shopify ecosystems and modern websites to custom applications and interactive products."
     },
+    "intro": {
+      "label": "01 — WHO WE ARE",
+      "lines": [
+        "We start with the business.",
+        "We finish with a product that works."
+      ],
+      "support": [
+        "Novel Axis Solutions is a small digital studio for growing businesses. Strategy, design, and engineering stay in one room, so decisions happen faster and the finished product feels considered.",
+        "We connect the customer journey, interface, content, and technology so each part supports the next. The result is easier to use, easier to maintain, and ready to grow."
+      ],
+      "ctaText": "Meet the team",
+      "capability": [
+        "SHOPIFY",
+        "WEB",
+        "APPS",
+        "UI/UX",
+        "DIGITAL PRODUCTS"
+      ],
+      "cardLabel": "ONE TEAM, END TO END",
+      "cardLines": [
+        "Six specialists.",
+        "One shared plan.",
+        "No lost context."
+      ],
+      "badgeMain": "THE STUDIO",
+      "badgeSide": "CRAFT ↑",
+      "imageMain": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
+      "imageMainAlt": "The Novel Axis team collaborating in the studio",
+      "imageSide": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
+      "imageSideAlt": "Close-up of the team designing an interface"
+    },
     "cta": {
       "label": "READY WHEN YOU ARE",
       "copy": "Tell us what you're building. We'll figure out how to build it."
-    },
-    "phone": "+44 7434 785417"
+    }
   },
   "services": [
     {
@@ -235,6 +266,62 @@
         }
       ],
       "highlight": "software that earns its keep"
+    },
+    {
+      "id": "wordpress",
+      "index": "05",
+      "name": "WordPress",
+      "shortName": "WordPress",
+      "tagline": "Custom builds that hold up.",
+      "description": "We build WordPress properly — custom themes, complex plugins, and WooCommerce stores engineered for speed, security, and the long haul.",
+      "icon": "wordpress",
+      "items": [
+        {
+          "name": "Custom themes",
+          "desc": "Bespoke themes on modern block patterns, templates, and design tokens."
+        },
+        {
+          "name": "Plugin & API work",
+          "desc": "Custom plugins, REST integrations, and headless WordPress frontends."
+        },
+        {
+          "name": "WooCommerce",
+          "desc": "Storefronts, checkout flows, and replatforms that hold up under load."
+        },
+        {
+          "name": "Care plans",
+          "desc": "Updates, backups, and performance work on a schedule, every month."
+        }
+      ],
+      "highlight": "1,000+ hours delivered across WordPress and Shopify builds."
+    },
+    {
+      "id": "squarespace",
+      "index": "06",
+      "name": "Squarespace",
+      "shortName": "Squarespace",
+      "tagline": "Design-led sites, launched fast.",
+      "description": "Squarespace is the short route to a sharp, design-led site — template setup, custom code, and a clean handover for the team that owns it.",
+      "icon": "squarespace",
+      "items": [
+        {
+          "name": "Template setup",
+          "desc": "Structure, typography, and layout tuned into a template that fits the brand."
+        },
+        {
+          "name": "Custom CSS & code",
+          "desc": "Targeted CSS, typefaces, and code injections where the template falls short."
+        },
+        {
+          "name": "Content migration",
+          "desc": "Copy, images, and structure moved across with no broken links or lost pages."
+        },
+        {
+          "name": "Launch & training",
+          "desc": "Domain, DNS, analytics, and a walkthrough for the people publishing daily."
+        }
+      ],
+      "highlight": "Design-led builds, launched fast."
     }
   ],
   "team": [
