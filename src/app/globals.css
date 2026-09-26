@@ -1150,6 +1150,10 @@
 
   .intro {
     padding-block: clamp(2.75rem, 5vw, 4.5rem);
+    --intro-media-fg: #f4f7ff;
+    --intro-media-bg: rgba(5, 11, 26, 0.66);
+    --intro-media-bg-strong: rgba(5, 11, 26, 0.82);
+    --intro-media-border: rgba(244, 247, 255, 0.34);
   }
 
   .intro__label {
@@ -1288,6 +1292,98 @@
 
   .intro__cta:hover .intro__cta-arrow {
     transform: translateY(4px);
+  }
+
+  .intro__cards {
+    grid-template-areas:
+      "main"
+      "stat"
+      "side";
+  }
+
+  .intro__card--main {
+    grid-area: main;
+  }
+
+  .intro__card--side {
+    grid-area: side;
+  }
+
+  .intro__card--stat {
+    grid-area: stat;
+  }
+
+  .intro__chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--intro-media-border);
+    background: var(--intro-media-bg);
+    padding: 0.3rem 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--intro-media-fg);
+    text-shadow: 0 1px 2px rgba(2, 10, 26, 0.6);
+  }
+
+  .intro__badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--intro-media-border);
+    background: var(--intro-media-bg-strong);
+    padding: 0.3rem 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--intro-media-fg);
+    text-shadow: 0 1px 2px rgba(2, 10, 26, 0.6);
+  }
+
+  .intro__badge--center {
+    padding: 0.45rem 0.9rem;
+  }
+
+  .intro__card-lines {
+    max-width: 20ch;
+    font-size: clamp(1.5rem, 6.6vw, 1.625rem);
+    font-weight: var(--fw-extrabold);
+    line-height: 1.16;
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text);
+  }
+
+  .intro__card-line {
+    display: block;
+  }
+
+  .intro__card-line--accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .intro__cards {
+      grid-template-areas:
+        "main side"
+        "main stat";
+    }
+
+    .intro__card-lines {
+      max-width: 8.75rem;
+      font-size: 1.5rem;
+    }
   }
 
 
