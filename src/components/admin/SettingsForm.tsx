@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { AdminSettings } from "@/lib/types";
+import ImageUploader from "./ImageUploader";
 
 interface SettingsFormProps {
   initial: AdminSettings;
@@ -37,9 +38,20 @@ export default function SettingsForm({ initial, onSaved }: SettingsFormProps) {
     setDraft((d) => ({ ...d, cta: { ...d.cta, ...patch } }));
   }
 
+  function updateIntro(patch: Partial<AdminSettings["intro"]>) {
+    setDraft((d) => ({ ...d, intro: { ...d.intro, ...patch } }));
+  }
+
   function parseSocials(value: string): string[] {
     return value
       .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  function parseLines(value: string): string[] {
+    return value
+      .split("\n")
       .map((item) => item.trim())
       .filter(Boolean);
   }
@@ -185,6 +197,160 @@ export default function SettingsForm({ initial, onSaved }: SettingsFormProps) {
             rows={3}
             value={draft.hero.copy}
             onChange={(e) => updateHero({ copy: e.target.value })}
+          />
+        </div>
+      </section>
+
+      <section className="adm-panel">
+        <h2 className="adm-panel-title">WHO WE ARE</h2>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-label">
+            Label
+          </label>
+          <input
+            id="sf-intro-label"
+            value={draft.intro.label}
+            onChange={(e) => updateIntro({ label: e.target.value })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-lines">
+            Statement lines
+          </label>
+          <textarea
+            id="sf-intro-lines"
+            rows={3}
+            value={draft.intro.lines.join("\n")}
+            onChange={(e) => updateIntro({ lines: parseLines(e.target.value) })}
+          />
+          <p className="adm-hint">one per line — the last line renders in the accent style</p>
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-support">
+            Support paragraphs
+          </label>
+          <textarea
+            id="sf-intro-support"
+            rows={5}
+            value={draft.intro.support.join("\n")}
+            onChange={(e) => updateIntro({ support: parseLines(e.target.value) })}
+          />
+          <p className="adm-hint">one paragraph per line</p>
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-cta-text">
+            CTA text
+          </label>
+          <input
+            id="sf-intro-cta-text"
+            value={draft.intro.ctaText}
+            onChange={(e) => updateIntro({ ctaText: e.target.value })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-capability">
+            Capability chips — comma-separated
+          </label>
+          <input
+            id="sf-intro-capability"
+            value={draft.intro.capability.join(", ")}
+            onChange={(e) => updateIntro({ capability: parseSocials(e.target.value) })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-card-label">
+            Card label
+          </label>
+          <input
+            id="sf-intro-card-label"
+            value={draft.intro.cardLabel}
+            onChange={(e) => updateIntro({ cardLabel: e.target.value })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-card-lines">
+            Card lines
+          </label>
+          <textarea
+            id="sf-intro-card-lines"
+            rows={3}
+            value={draft.intro.cardLines.join("\n")}
+            onChange={(e) => updateIntro({ cardLines: parseLines(e.target.value) })}
+          />
+          <p className="adm-hint">one per line — the last line renders with the gradient accent</p>
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-badge-main">
+            Main image badge
+          </label>
+          <input
+            id="sf-intro-badge-main"
+            value={draft.intro.badgeMain}
+            onChange={(e) => updateIntro({ badgeMain: e.target.value })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-badge-side">
+            Side image badge
+          </label>
+          <input
+            id="sf-intro-badge-side"
+            value={draft.intro.badgeSide}
+            onChange={(e) => updateIntro({ badgeSide: e.target.value })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-image-main">
+            Main image URL
+          </label>
+          <div className="adm-imgs__add">
+            <input
+              id="sf-intro-image-main"
+              value={draft.intro.imageMain}
+              onChange={(e) => updateIntro({ imageMain: e.target.value })}
+              placeholder="Paste an image URL"
+            />
+            <ImageUploader
+              onUploaded={(url) => updateIntro({ imageMain: url })}
+              label="Upload main"
+            />
+          </div>
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-image-main-alt">
+            Main image alt
+          </label>
+          <input
+            id="sf-intro-image-main-alt"
+            value={draft.intro.imageMainAlt}
+            onChange={(e) => updateIntro({ imageMainAlt: e.target.value })}
+          />
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-image-side">
+            Side image URL
+          </label>
+          <div className="adm-imgs__add">
+            <input
+              id="sf-intro-image-side"
+              value={draft.intro.imageSide}
+              onChange={(e) => updateIntro({ imageSide: e.target.value })}
+              placeholder="Paste an image URL"
+            />
+            <ImageUploader
+              onUploaded={(url) => updateIntro({ imageSide: url })}
+              label="Upload side"
+            />
+          </div>
+        </div>
+        <div className="adm-field">
+          <label className="adm-label" htmlFor="sf-intro-image-side-alt">
+            Side image alt
+          </label>
+          <input
+            id="sf-intro-image-side-alt"
+            value={draft.intro.imageSideAlt}
+            onChange={(e) => updateIntro({ imageSideAlt: e.target.value })}
           />
         </div>
       </section>

@@ -31,6 +31,7 @@ export async function PUT(req: Request) {
   const contact = (body.contact ?? {}) as Record<string, unknown>;
   const footer = (body.footer ?? {}) as Record<string, unknown>;
   const hero = (body.hero ?? {}) as Record<string, unknown>;
+  const intro = (body.intro ?? {}) as Record<string, unknown>;
   const cta = (body.cta ?? {}) as Record<string, unknown>;
 
   const patch: Partial<AdminSettings> = {
@@ -48,6 +49,21 @@ export async function PUT(req: Request) {
     hero: {
       label: str(hero.label, current.hero.label),
       copy: str(hero.copy, current.hero.copy),
+    },
+    intro: {
+      label: str(intro.label, current.intro.label),
+      lines: strArr(intro.lines, current.intro.lines),
+      support: strArr(intro.support, current.intro.support),
+      ctaText: str(intro.ctaText, current.intro.ctaText),
+      capability: strArr(intro.capability, current.intro.capability),
+      cardLabel: str(intro.cardLabel, current.intro.cardLabel),
+      cardLines: strArr(intro.cardLines, current.intro.cardLines),
+      badgeMain: str(intro.badgeMain, current.intro.badgeMain),
+      badgeSide: str(intro.badgeSide, current.intro.badgeSide),
+      imageMain: str(intro.imageMain, current.intro.imageMain),
+      imageMainAlt: str(intro.imageMainAlt, current.intro.imageMainAlt),
+      imageSide: str(intro.imageSide, current.intro.imageSide),
+      imageSideAlt: str(intro.imageSideAlt, current.intro.imageSideAlt),
     },
     cta: {
       label: str(cta.label, current.cta.label),
