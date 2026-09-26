@@ -13,6 +13,8 @@ const SERVICE_ACCENTS = {
   web: "var(--color-accent-2)",
   uiux: "color-mix(in srgb, var(--color-accent-1) 68%, var(--color-accent-2))",
   apps: "color-mix(in srgb, var(--color-accent-2) 68%, var(--color-accent-1))",
+  wordpress: "#4ee0b4",
+  squarespace: "#7a8cff",
 } as const satisfies Record<ServiceIcon, string>;
 
 const SERVICE_CATEGORIES = {
@@ -20,6 +22,8 @@ const SERVICE_CATEGORIES = {
   web: "web",
   uiux: "experience",
   apps: "software",
+  wordpress: "cms",
+  squarespace: "platform",
 } as const satisfies Record<ServiceIcon, string>;
 
 function splitName(name: string): { head: string; tail: string | null } {

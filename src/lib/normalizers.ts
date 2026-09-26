@@ -10,7 +10,12 @@ const strList = (value: unknown): string[] =>
   Array.isArray(value) ? value.filter((x): x is string => typeof x === "string") : [];
 
 const isServiceIcon = (value: unknown): value is ServiceIcon =>
-  value === "shopify" || value === "web" || value === "uiux" || value === "apps";
+  value === "shopify" ||
+  value === "web" ||
+  value === "uiux" ||
+  value === "apps" ||
+  value === "wordpress" ||
+  value === "squarespace";
 
 export function initialsFromName(name: string): string {
   return (
