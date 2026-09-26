@@ -29,7 +29,7 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero hero={site.hero} />
-        <Intro />
+        <Intro intro={site.intro} />
         <Services services={services} />
         <Work projects={projects} />
         <Technology />

@@ -39,11 +39,11 @@ const titleCase = (s: string) =>
   s.toLowerCase().replace(/(^|\s)\S/g, (m) => m.toUpperCase());
 
 /* Figures below are derived from the site's own data files — nothing invented. */
-const disciplineCount = site.capability.length;
+const disciplineCount = site.intro.capability.length;
 const techTotal = coreTechnologies.length + stack.length;
 const phaseCount = processSteps.length;
 
-const capabilityList = site.capability.map(titleCase).join(", ");
+const capabilityList = site.intro.capability.map(titleCase).join(", ");
 
 export default function Why({
   projectCount,

@@ -16,7 +16,6 @@ export const site = {
     { num: "04", label: "About", href: "#about" },
     { num: "05", label: "Contact", href: "#contact" },
   ],
-  capability: ["SHOPIFY", "WEB", "APPS", "UI/UX", "DIGITAL PRODUCTS"],
   hero: {
     label: "NOVEL AXIS SOLUTIONS · DIGITAL PRODUCT STUDIO",
     title: ["Websites that earn trust", "products that scale", "with your business."],
