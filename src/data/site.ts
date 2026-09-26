@@ -1,3 +1,5 @@
+import { images } from "@/data/images";
+
 export const site = {
   email: "expoecom1@gmail.com",
   phone: "+44 7434 785417",
@@ -22,11 +24,22 @@ export const site = {
     copy: "We design and build websites, Shopify stores, and custom products for growing businesses that need clear thinking, fast performance, and less ongoing friction.",
   },
   intro: {
+    label: "01 — WHO WE ARE",
     lines: ["We start with the business.", "We finish with a product that works."],
     support: [
       "Novel Axis Solutions is a small digital studio for growing businesses. Strategy, design, and engineering stay in one room, so decisions happen faster and the finished product feels considered.",
       "We connect the customer journey, interface, content, and technology so each part supports the next. The result is easier to use, easier to maintain, and ready to grow.",
     ],
+    ctaText: "Meet the team",
+    capability: ["SHOPIFY", "WEB", "APPS", "UI/UX", "DIGITAL PRODUCTS"],
+    cardLabel: "ONE TEAM, END TO END",
+    cardLines: ["Six specialists.", "One shared plan.", "No lost context."],
+    badgeMain: "THE STUDIO",
+    badgeSide: "CRAFT ↑",
+    imageMain: images.teamCollab,
+    imageMainAlt: "The Novel Axis team collaborating in the studio",
+    imageSide: images.teamLaptop,
+    imageSideAlt: "Close-up of the team designing an interface",
   },
   why: [
     {

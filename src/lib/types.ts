@@ -24,6 +24,21 @@ export interface AdminSettings {
     label: string;
     copy: string;
   };
+  intro: {
+    label: string;
+    lines: string[];
+    support: string[];
+    ctaText: string;
+    capability: string[];
+    cardLabel: string;
+    cardLines: string[];
+    badgeMain: string;
+    badgeSide: string;
+    imageMain: string;
+    imageMainAlt: string;
+    imageSide: string;
+    imageSideAlt: string;
+  };
   cta: {
     label: string;
     copy: string;

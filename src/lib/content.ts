@@ -23,6 +23,21 @@ function defaultSettings(): AdminSettings {
       copyright: `© ${new Date().getFullYear()} Novel Axis Solutions. All rights reserved.`,
     },
     hero: { label: seedSite.hero.label, copy: seedSite.hero.copy },
+    intro: {
+      label: seedSite.intro.label,
+      lines: [...seedSite.intro.lines],
+      support: [...seedSite.intro.support],
+      ctaText: seedSite.intro.ctaText,
+      capability: [...seedSite.intro.capability],
+      cardLabel: seedSite.intro.cardLabel,
+      cardLines: [...seedSite.intro.cardLines],
+      badgeMain: seedSite.intro.badgeMain,
+      badgeSide: seedSite.intro.badgeSide,
+      imageMain: seedSite.intro.imageMain,
+      imageMainAlt: seedSite.intro.imageMainAlt,
+      imageSide: seedSite.intro.imageSide,
+      imageSideAlt: seedSite.intro.imageSideAlt,
+    },
     cta: { label: seedSite.cta.label, copy: seedSite.cta.copy },
   };
 }
@@ -68,7 +83,13 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 
 export async function getSettings(): Promise<AdminSettings> {
   const store = await readStore();
-  return store?.settings ?? defaultSettings();
+  if (!store?.settings) return defaultSettings();
+  const defaults = defaultSettings();
+  return {
+    ...defaults,
+    ...store.settings,
+    intro: { ...defaults.intro, ...(store.settings.intro ?? {}) },
+  };
 }
 
 export async function getSite(): Promise<SiteData> {
@@ -95,12 +116,16 @@ export async function getSite(): Promise<SiteData> {
       socials: s.footer.socials.length ? s.footer.socials : seedSite.footer.socials,
       copyright: s.footer.copyright || seedSite.footer.copyright,
     },
+    intro: {
+      ...seedSite.intro,
+      ...(s.intro ?? {}),
+    },
     cta: {
       ...seedSite.cta,
       label: s.cta.label || seedSite.cta.label,
       copy: s.cta.copy || seedSite.cta.copy,
     },
-  } as SiteData;
+  } as unknown as SiteData;
 }
 
 export async function saveProjects(projects: Project[]): Promise<WriteResult> {
@@ -127,6 +152,7 @@ export async function saveSettings(patch: Partial<AdminSettings>): Promise<Write
     contact: { ...current.contact, ...(patch.contact ?? {}) },
     footer: { ...current.footer, ...(patch.footer ?? {}) },
     hero: { ...current.hero, ...(patch.hero ?? {}) },
+    intro: { ...current.intro, ...(patch.intro ?? {}) },
     cta: { ...current.cta, ...(patch.cta ?? {}) },
   };
   return writeStore({ settings: merged });
