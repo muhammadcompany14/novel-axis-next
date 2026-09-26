@@ -26,8 +26,8 @@ export const site = {
     label: "01 — WHO WE ARE",
     lines: ["We start with the business.", "We finish with a product that works."],
     support: [
-      "Novel Axis Solutions is a small digital studio for growing businesses. Strategy, design, and engineering stay in one room — faster decisions, a more considered product.",
-      "We connect the customer journey, interface, content, and technology so each part supports the next — easier to use, easier to maintain, ready to grow.",
+      "A small digital studio for growing businesses. Strategy, design, and engineering stay in one room.",
+      "We connect the customer journey, interface, content, and technology — easier to use, easier to maintain, ready to grow.",
     ],
     ctaText: "Meet the team",
     capability: ["SHOPIFY", "WEB", "APPS", "UI/UX", "DIGITAL PRODUCTS"],
